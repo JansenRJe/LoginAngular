@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Credencial } from '../credencial';
 import { LocalStorageService } from '../local-storage.service';
 
 @Component({
@@ -7,25 +8,27 @@ import { LocalStorageService } from '../local-storage.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public site:string = '';
-  public login:string = '';
-  public senha:string = '';
+  public credencial = {} as Credencial;
+  
 
   constructor(
     public local_Storage:LocalStorageService
   ) {
-    this.site =this.local_Storage.get('site');
+    this.carregar();
+  }
+
+  carregar(){
+    /*this.site =this.local_Storage.get('site');
     this.login =this.local_Storage.get('login');
-    this.senha =this.local_Storage.get('senha');
+    this.senha =this.local_Storage.get('senha');*/
   }
-  
+
   armazenar(){
-    this.local_Storage.set('site',this.site);
-    this.local_Storage.set('login',this.login);
-    this.local_Storage.set('senha',this.senha);
+    this.local_Storage.append('credencial',this.credencial);
   }
+
   del(){
-    this.local_Storage.del("senha");
+    this.local_Storage.del("credencial.senha");
   }
 
   limpar(){

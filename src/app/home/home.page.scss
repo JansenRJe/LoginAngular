@@ -1,4 +1,4 @@
-#container {
+#container-main {
   text-align: center;
 
   position: absolute;
@@ -8,12 +8,12 @@
   transform: translateY(-50%);
 }
 
-#container strong {
+#container-main strong {
   font-size: 20px;
   line-height: 26px;
 }
 
-#container p {
+#container-main p {
   font-size: 16px;
   line-height: 22px;
 
@@ -22,6 +22,7 @@
   margin: 0;
 }
 
-#container a {
+#container-main a {
   text-decoration: none;
+  
 }
