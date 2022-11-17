@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-accordion-group>
+    <ion-accordion 
+      [value]="d.site" *ngFor="let d of data"
+    >
+      <ion-item slot="header" color="light">
+        <ion-label>{{ d.site }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Login: <strong>{{ d.login }}</strong></p>
+        <input type="password" [value]="d.senha" />
+        <ion-icon name="eye-outline"></ion-icon>
+      </div>
+    </ion-accordion>    
+  </ion-accordion-group>
+</ion-content>

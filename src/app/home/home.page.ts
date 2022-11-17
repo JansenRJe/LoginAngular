@@ -9,29 +9,25 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class HomePage {
   public credencial = {} as Credencial;
-  
-
   constructor(
-    public local_Storage:LocalStorageService
+    public localStorage: LocalStorageService
   ) {
     this.carregar();
   }
-
-  carregar(){
-    /*this.site =this.local_Storage.get('site');
-    this.login =this.local_Storage.get('login');
-    this.senha =this.local_Storage.get('senha');*/
+  carregar() {
+    //this.site   = this.local_storage.get('site');
+    //this.login  = this.local_storage.get('login');
+    //this.senha  = this.local_storage.get('senha');
   }
-
   armazenar(){
-    this.local_Storage.append('credencial',this.credencial);
+    this.localStorage.append('credencial',this.credencial);
+  }
+  limpar() {
+
+
+    this.credencial.login = '';
+    this.credencial.senha = '';
+    this.credencial.site = '';
   }
 
-  del(){
-    this.local_Storage.del("credencial.senha");
-  }
-
-  limpar(){
-    this.local_Storage.clear();
-  }
 }

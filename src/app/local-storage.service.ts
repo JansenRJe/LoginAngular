@@ -4,27 +4,28 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LocalStorageService {
-  public local_Storage:any = window.localStorage;
+  public localStorage:any = window.localStorage;
   constructor() { }
 
   set(key:string,value:any){
-    this.local_Storage.setItem(key,JSON.stringify(value));
+    this.localStorage.setItem(key,JSON.stringify(value));
   }
   
   get(key:string){
-    return this.local_Storage.getItem(key);
+    return this.localStorage.getItem(key);
   }
 
   del(key:string){
     this.set(key,'');
   }
+  
 
   clear(){
-    this.local_Storage.clear()
+    this.localStorage.clear();
   }
 
   rm(key:string){
-    this.local_Storage.removeItem(key)
+    this.localStorage.removeItem(key)
   }
 
   append(key:string,value:any){
@@ -43,5 +44,9 @@ export class LocalStorageService {
 
     // Salva a nova informação no localStorage
     this.set(key,new_value);
+  }
+
+  getJSON(key:string){
+    return JSON.parse(this.get(key));
   }
 }

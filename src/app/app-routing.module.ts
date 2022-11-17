@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'listar',
+    loadChildren: () => import('./listar/listar.module').then( m => m.ListarPageModule)
+  },
 ];
 
 @NgModule({
