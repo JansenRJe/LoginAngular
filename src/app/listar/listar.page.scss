@@ -1,7 +1,11 @@
 .olho-maconaria {
     width:32px;
-    height: 14px;
-    border:1px solid #DDD;
-    transform: translate(0,5px);
+    max-height: 25px;
+    border:none;
+    transform: translate(-25px, 5px);
     color:#222;
+}
+
+.input-senha, .input-login, .input-site {
+    padding: 3px;
 }
