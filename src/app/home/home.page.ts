@@ -8,9 +8,9 @@ import { LocalStorageService } from '../local-storage.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public credencial = {} as Credencial;
+  public _credencial = {} as Credencial;
   constructor(
-    public localStorage: LocalStorageService
+    public local_storage: LocalStorageService
   ) {
     this.carregar();
   }
@@ -20,14 +20,14 @@ export class HomePage {
     //this.senha  = this.local_storage.get('senha');
   }
   armazenar(){
-    this.localStorage.append('credencial',this.credencial);
+    this.local_storage.append('credenciais',this._credencial);
   }
   limpar() {
 
 
-    this.credencial.login = '';
-    this.credencial.senha = '';
-    this.credencial.site = '';
+    this._credencial.login = '';
+    this._credencial.senha = '';
+    this._credencial.site = '';
   }
 
 }

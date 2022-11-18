@@ -1,50 +1,43 @@
-<div id="container-body">
-  <ion-header [translucent]="true">
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Cadastro Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title><strong>
-        Login
-      </strong></ion-title>
+      <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <ion-title size="large"></ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <div id="container-main">
-      <div>
-        <ion-img id="img-lock" src="/assets/icon/lock100.png"  alt="lock image" style="width:100px"></ion-img>
-      </div>
-      <div>
-        <ion-item fill="solid">
-          <ion-label position="floating">Site</ion-label>
-          <ion-input type="text" class="input-as" placeholder="//https/www.site.com.br" [(ngModel)]="credencial.site"></ion-input>
-        </ion-item>
-      </div>
-      <div>
-        <ion-item fill="solid">
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email" class="input-as" placeholder="nome@email.com" [(ngModel)]="credencial.login"></ion-input>
-          <ion-note slot="error">Invalid email</ion-note>
-        </ion-item>
-      </div>
-      <div>
-        <ion-item fill="solid">
-          <ion-label position="floating">Senha</ion-label>
-          <ion-input type="password" class="input-as" placeholder="**********" [(ngModel)]="credencial.senha" ></ion-input>
-          <ion-note slot="error">Senha invalida</ion-note>
-        </ion-item>
-      </div>
-      <div>
-        <ion-button class="button-enter" expand="block" (click)="armazenar()">Armazenar</ion-button>
-        <ion-button class="button-enter" expand="block" color="dark" (click)="del()">Deletar</ion-button>
-        <ion-button class="button-enter" expand="block" color="danger" (click)="limpar()">Limpar</ion-button>
-        <ion-button>Deletar</ion-button>
-        <ion-button>Limpar</ion-button>
-      </div>
+  <div id="container-main">
+    <div>
+      <ion-img id="img-lock" src="/assets/icon/lock100.png"  alt="lock image" style="width:100px"></ion-img>
     </div>
-  </ion-content>
-</div>
+    <div>
+      <ion-item>
+        <ion-label position="floating">Site</ion-label>
+        <ion-input placeholder="http://site.com" [(ngModel)]="_credencial.site"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <ion-item>
+        <ion-label position="floating">Login</ion-label>
+        <ion-input placeholder="User name" [(ngModel)]="_credencial.login"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="_credencial.senha"></ion-input>
+      </ion-item>
+    </div>
+    <div>  
+      <ion-button expand="block" (click)="armazenar()">Armazenar</ion-button>
+      <ion-button expand="block" (click)="limpar()" color="danger">Limpar</ion-button>
+    </div> 
+  </div>
+</ion-content>

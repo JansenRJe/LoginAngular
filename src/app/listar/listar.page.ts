@@ -9,8 +9,11 @@ import { LocalStorageService } from '../local-storage.service';
 })
 export class ListarPage implements OnInit {
   public data:Array<Credencial> = [];
+  public icon_type:string = 'eye-outline';
+  public pwd_type:string = 'password';
+
   constructor(
-    public localStorage:LocalStorageService
+    public local_storage:LocalStorageService
   ) {}
 
   ngOnInit() {
@@ -18,6 +21,17 @@ export class ListarPage implements OnInit {
   }
 
   carregar(){
-    this.data = this.localStorage.getJSON('Credencial');
+    this.data = this.local_storage.getJSON('credenciais');
+  }
+
+  exibir(){
+    if (this.icon_type == 'eye-outline'){
+      this.icon_type = 'eye-off-outline';
+      this.pwd_type = 'text';
+    }else{
+      this.pwd_type = 'password';
+      this.icon_type = 'eye-outline';
+    }
+    
   }
 }

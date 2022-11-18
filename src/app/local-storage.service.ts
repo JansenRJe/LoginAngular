@@ -4,15 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LocalStorageService {
-  public localStorage:any = window.localStorage;
+  public local_storage:any = window.localStorage;
   constructor() { }
 
   set(key:string,value:any){
-    this.localStorage.setItem(key,JSON.stringify(value));
+    this.local_storage.setItem(key,JSON.stringify(value));
   }
   
   get(key:string){
-    return this.localStorage.getItem(key);
+    return this.local_storage.getItem(key);
   }
 
   del(key:string){
@@ -21,11 +21,11 @@ export class LocalStorageService {
   
 
   clear(){
-    this.localStorage.clear();
+    this.local_storage.clear();
   }
 
   rm(key:string){
-    this.localStorage.removeItem(key)
+    this.local_storage.removeItem(key)
   }
 
   append(key:string,value:any){
