@@ -14,7 +14,7 @@ export class ListarPage implements OnInit {
   public pwd_type:string = 'password';
 
   constructor(
-    public local_storage:LocalStorageService
+    public local_storage:LocalStorageService,
     public firebase:FirebaseService
   ) {}
 
