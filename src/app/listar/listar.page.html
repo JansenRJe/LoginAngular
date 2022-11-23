@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content>
+  <ion-button (click)="upload();"></ion-button>
   <ion-accordion-group>
     <ion-accordion 
       [value]="d.site" *ngFor="let d of data"

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Credencial } from '../credencial';
+import { FirebaseService } from '../firebase.service';
 import { LocalStorageService } from '../local-storage.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class ListarPage implements OnInit {
 
   constructor(
     public local_storage:LocalStorageService
+    public firebase:FirebaseService
   ) {}
 
   ngOnInit() {
@@ -32,6 +34,10 @@ export class ListarPage implements OnInit {
       this.pwd_type = 'password';
       this.icon_type = 'eye-outline';
     }
-    
+      
+  }
+
+  upload(){
+    this.firebase.upload();
   }
 }
