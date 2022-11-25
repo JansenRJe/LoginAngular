@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'listar',
-    loadChildren: () =>import('./listar/Listar.module').then(m => m.ListarPageModule)
+    loadChildren: () =>import('./listar/listar.module').then(m => m.ListarPageModule)
   },
 ];
 

@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>listar</ion-title>
+    <div class="bnt-nav-home">
+      <ion-button expand="block" routerLink="/home">home</ion-button>
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -17,8 +20,12 @@
           <strong>{{ d.login }}</strong>
         </p>
         <input [type]="pwd_type" [value]="d.senha" />
-        <ion-icon class="olho-maconaria" style="zoom:1.5;" [name]="icon_type" (click)="exibir()"
-        ></ion-icon>
+        <ion-icon class="olho-maconaria" style="zoom:1.5;" [name]="icon_type" (click)="exibir()"></ion-icon>
+      </div>
+      <div>
+        <ion-button (click)="upload();">backup</ion-button>
+        <ion-button (click)="download();">download</ion-button>
+        <ion-button expand="block" (click)="limpar()" color="danger">Limpar</ion-button>
       </div>
     </ion-accordion>    
   </ion-accordion-group>
