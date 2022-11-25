@@ -5,16 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="upload();"></ion-button>
+  <ion-button (click)="upload();">backup</ion-button>
+  <ion-button (click)="download();">download</ion-button>
   <ion-accordion-group>
-    <ion-accordion 
-      [value]="d.site" *ngFor="let d of data"
-    >
+    <ion-accordion [value]="d.site" *ngFor="let d of data">
       <ion-item slot="header" color="light">
         <ion-label>{{ d.site }}</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <p>Login: <strong>{{ d.login }}</strong></p>
+        <p>Login: 
+          <strong>{{ d.login }}</strong>
+        </p>
         <input [type]="pwd_type" [value]="d.senha" />
         <ion-icon class="olho-maconaria" style="zoom:1.5;" [name]="icon_type" (click)="exibir()"
         ></ion-icon>

@@ -28,16 +28,28 @@ export class ListarPage implements OnInit {
 
   exibir(){
     if (this.icon_type == 'eye-outline'){
-      this.icon_type = 'eye-off-outline';
-      this.pwd_type = 'text';
+        this.icon_type = 'eye-off-outline';
+        this.pwd_type = 'text';
     }else{
-      this.pwd_type = 'password';
-      this.icon_type = 'eye-outline';
+        this.pwd_type = 'password';
+        this.icon_type = 'eye-outline';
     }
       
   }
 
   upload(){
     this.firebase.upload();
+  }
+
+  download(){
+    this.firebase.download()
+    .subscribe((data:any)=>{
+      //faz a busca no local_storage e retorna se os dados estão ou não atualizados
+        if(this.local_storage.get('credenciais') != data){
+          alert('Seus dados estão desatualizados');
+        }
+      this.local_storage.set('credenciais', data);
+      this.carregar();
+      });
   }
 }
