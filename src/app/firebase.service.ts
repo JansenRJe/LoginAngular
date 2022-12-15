@@ -7,19 +7,26 @@ import { LocalStorageService } from './local-storage.service';
 })
 export class FirebaseService {
 
+
   constructor(
     public firebase: AngularFireDatabase,
     public ls:LocalStorageService
   ) { }
 
   upload(){
-    this.firebase.database.ref('/credenciais')
-    .set(this.ls.getJSON('credenciais'));
+    this.firebase.database.ref('/credencial')
+    .set(this.ls.getJSON('crendencial'));
   }
   download(){
     return this.firebase
-    .object('/credenciais')
+    .object('/credencial')
     .valueChanges();
     
+  }
+  clear(){
+    this.firebase.database.ref('/credencial/key')
+    .set(this.ls.getJSON('crendencial'));
+    
+   
   }
 }

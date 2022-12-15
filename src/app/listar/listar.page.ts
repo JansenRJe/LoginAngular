@@ -3,6 +3,8 @@ import { Credencial } from '../credencial';
 import { FirebaseService } from '../firebase.service';
 import { LocalStorageService } from '../local-storage.service';
 
+
+
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.page.html',
@@ -23,8 +25,9 @@ export class ListarPage implements OnInit {
   }
 
   carregar(){
-    this.data = this.local_storage.getJSON('credenciais');
+    this.data = this.local_storage.getJSON('credencial');
   }
+
 
   exibir(){
     if (this.icon_type == 'eye-outline'){
@@ -35,7 +38,7 @@ export class ListarPage implements OnInit {
         this.icon_type = 'eye-outline';
     }
       
-  }
+  }    
 
   upload(){
     this.firebase.upload();
@@ -45,11 +48,14 @@ export class ListarPage implements OnInit {
     this.firebase.download()
     .subscribe((data:any)=>{
       //faz a busca no local_storage e retorna se os dados estão ou não atualizados
-        if(this.local_storage.get('credenciais') != data){
+        /*if(this.local_storage.get('credencial') != data){
           alert('Seus dados estão desatualizados');
-        }
-      this.local_storage.set('credenciais', data);
+        }*/
+      this.local_storage.set('credencial', data);
       this.carregar();
-      });
+    });   
   }
+  
+
+
 }

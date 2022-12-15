@@ -1,44 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Cadastro Login
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<div>
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>
+        Cadastro Login
+      </ion-title>
+      <div >
+        <ion-button class="c-bnt-navg" routerLink="/listar" ><ion-icon name="list-outline">Listar</ion-icon></ion-button>
+      </div>
     </ion-toolbar>
   </ion-header>
+</div>
 
-  <div id="container-main">
-    <div>
-      <ion-img id="img-lock" src="/assets/icon/lock100.png"  alt="lock image" style="width:100px"></ion-img>
+
+<!--<div class="container-header">-->
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large"></ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <div id="container-main">
+      <div>
+        <ion-img id="img-lock" src="/assets/icon/lock100.png"  alt="lock image" style="width:100px"></ion-img>
+      </div>
+      <div>
+        <ion-item>
+          <ion-label position="floating">Site</ion-label>
+          <ion-input class="input-site" placeholder="http://site.com" [(ngModel)]="_credencial.site"></ion-input>
+        </ion-item>
+      </div>
+      <div>
+        <ion-item>
+          <ion-label position="floating">Login</ion-label>
+          <ion-input class="input-login" placeholder="User name" [(ngModel)]="_credencial.login"></ion-input>
+        </ion-item>
+      </div>
+      <div>
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input class="input-senha" type="password" [(ngModel)]="_credencial.senha"></ion-input>
+        </ion-item>
+      </div>
+      <div>  
+        <ion-button class="btn-armazenar" expand="block" (click)="armazenar()" >Armazenar</ion-button>
+        <ion-button class="btn-limpar" expand="block" (click)="clear()" >Limpar</ion-button>
+      </div> 
     </div>
-    <div>
-      <ion-item>
-        <ion-label position="floating">Site</ion-label>
-        <ion-input class="input-site" placeholder="http://site.com" [(ngModel)]="_credencial.site"></ion-input>
-      </ion-item>
-    </div>
-    <div>
-      <ion-item>
-        <ion-label position="floating">Login</ion-label>
-        <ion-input class="input-login" placeholder="User name" [(ngModel)]="_credencial.login"></ion-input>
-      </ion-item>
-    </div>
-    <div>
-      <ion-item>
-        <ion-label position="floating">Senha</ion-label>
-        <ion-input class="input-senha" type="password" [(ngModel)]="_credencial.senha"></ion-input>
-      </ion-item>
-    </div>
-    <div>  
-      <ion-button expand="block" (click)="armazenar()" >Armazenar</ion-button>
-      
-      <ion-button expand="block" routerLink="/listar">Listar</ion-button>
-    </div> 
-  </div>
-</ion-content>
+  </ion-content>
+<!--</div>-->

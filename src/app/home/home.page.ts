@@ -8,26 +8,25 @@ import { LocalStorageService } from '../local-storage.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public credencial = {} as Credencial;
+  public _credencial = {} as Credencial;
   constructor(
     public local_storage: LocalStorageService
   ) {
     this.carregar();
   }
   carregar() {
-    //this.site   = this.local_storage.get('site');
-    //this.login  = this.local_storage.get('login');
-    //this.senha  = this.local_storage.get('senha');
+    
   }
   armazenar(){
-    this.local_storage.append('credenciais',this.credencial);
+    this.local_storage.append('crendencial',this._credencial);
+    this.armazenar();
+    this.clear();
+    return this.carregar();
   }
-  limpar() {
-
-
-    this.credencial.login = '';
-    this.credencial.senha = '';
-    this.credencial.site = '';
+  clear() {
+    this._credencial.login = '';
+    this._credencial.senha = '';
+    this._credencial.site = '';
   }
 
 }

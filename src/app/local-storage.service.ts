@@ -35,6 +35,7 @@ export class LocalStorageService {
     if (old_value == null){
       new_value = [];
     }else{
+      
       // Transforma o valor de String para JSON
       new_value  = JSON.parse(old_value);
     }

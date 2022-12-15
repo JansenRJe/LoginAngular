@@ -1,31 +1,29 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>listar</ion-title>
-    <div class="bnt-nav-home">
-      <ion-button expand="block" routerLink="/home">home</ion-button>
-    </div>
+    <ion-title>Listar</ion-title>
+    <ion-button  class="btn-icone" routerLink="/home" ><ion-icon name="home">home</ion-icon></ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-button (click)="upload();">backup</ion-button>
-  <ion-button (click)="download();">download</ion-button>
+
+<ion-content >
+  <ion-button (click)="upload()">backup</ion-button>
+  <ion-button (click)="download()">download</ion-button>
   <ion-accordion-group>
     <ion-accordion [value]="d.site" *ngFor="let d of data">
       <ion-item slot="header" color="light">
         <ion-label>{{ d.site }}</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <p>Login: 
-          <strong>{{ d.login }}</strong>
-        </p>
+        <p>Login: <strong>{{ d.login }}</strong></p>
         <input [type]="pwd_type" [value]="d.senha" />
         <ion-icon class="olho-maconaria" style="zoom:1.5;" [name]="icon_type" (click)="exibir()"></ion-icon>
-      </div>
-      <div>
-        <ion-button (click)="upload();">backup</ion-button>
-        <ion-button (click)="download();">download</ion-button>
-        <ion-button expand="block" (click)="limpar()" color="danger">Limpar</ion-button>
+        <ion-button>
+          
+          <ion-icon slot="end" name="pencil-outline" (click)="editar()" >editar</ion-icon>
+        </ion-button>
+        <ion-button><ion-icon slot="end" name="trash-outline" (click)="excluir()">excluir</ion-icon>
+</ion-button>
       </div>
     </ion-accordion>    
   </ion-accordion-group>
