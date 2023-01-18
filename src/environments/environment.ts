@@ -22,9 +22,11 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCa6Czen09INw-UiAmu3C_x6dP9YoxbmU4",
   authDomain: "password-manager-jan100.firebaseapp.com",
+  databaseURL: "https://password-manager-jan100-default-rtdb.firebaseio.com",
   projectId: "password-manager-jan100",
   storageBucket: "password-manager-jan100.appspot.com",
   messagingSenderId: "46967618547",
