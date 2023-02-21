@@ -2,6 +2,6 @@
 
 ## login - Angular - Ionic
 
-### Este é um projeto de login utilizando angular e ionic onde armazena
- informações no local storage, possibilitando assim o acesso remoto a aplicação,
-e posteriormente ao banco de dados onde serão guardadas informações.
+### O projeto de LoginAngular, é um app destinado ao o usuario que deseja armazena suas informações
+de login de um determinado site, informações essas sendo (nome do site, usuario e senha).
+A aplicação LoginAngular esta sendo desenvolvida utilizando as seguintes ferramentas: (Angular, framework ionic e o firebase como banco de dados).
